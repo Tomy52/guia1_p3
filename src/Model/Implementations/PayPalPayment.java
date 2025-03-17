@@ -3,7 +3,7 @@ package Model.Implementations;
 import Enums.InvoiceType;
 
 public class PayPalPayment extends ElectronicPayment {
-    String emailAddress;
+    private String emailAddress;
 
     public PayPalPayment(float amount, String dniNumber, InvoiceType invoiceType, String website, String emailAddress) {
         super(amount, dniNumber, invoiceType, website);
@@ -16,5 +16,11 @@ public class PayPalPayment extends ElectronicPayment {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nemail: " + emailAddress;
     }
 }

@@ -1,21 +1,25 @@
 package Verifications;
 
-import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class Verifications {
     public static boolean verifyAmount(float amount) {
         return !(amount <= 0);
     }
 
-    public static boolean verifyExpiryDate(LocalDate date) {
-        return date.isAfter(LocalDate.now());
+    public static boolean verifyChangeAmount(float amount) {
+        return !(amount < 0);
     }
 
-    public static boolean verifyCardNumber(String cardNumber) {
+    public static boolean verifyExpirationDate(YearMonth date) {
+        return date.isAfter(YearMonth.now());
+    }
+
+    public static boolean verifyNumericData(String data, int length) {
         boolean valid = true;
 
-        if (cardNumber.length() != 16) valid = false;
-        if (!cardNumber.matches("[0-9]+")) valid = false;
+        if (data.length() != length) valid = false;
+        if (!data.matches("[0-9]+")) valid = false;
 
         return valid;
     }

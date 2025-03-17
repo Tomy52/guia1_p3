@@ -3,14 +3,15 @@ package Model.Implementations;
 import Enums.InvoiceType;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class CreditCardPayment extends PhysicalPayment {
-    String cardNumber;
-    String cvv;
-    String holder;
-    LocalDate expirationDate;
+    private String cardNumber;
+    private String cvv;
+    private String holder;
+    private YearMonth expirationDate;
 
-    public CreditCardPayment(float amount, String dniNumber, InvoiceType invoiceType, String shopId, String cardNumber, String cvv, String holder, LocalDate expirationDate) {
+    public CreditCardPayment(float amount, String dniNumber, InvoiceType invoiceType, int shopId, String holder, String cardNumber, String cvv, YearMonth expirationDate) {
         super(amount, dniNumber, invoiceType, shopId);
         this.cardNumber = cardNumber;
         this.cvv = cvv;
@@ -42,11 +43,20 @@ public class CreditCardPayment extends PhysicalPayment {
         this.holder = holder;
     }
 
-    public LocalDate getExpirationDate() {
+    public YearMonth getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(LocalDate expirationDate) {
+    public void setExpirationDate(YearMonth expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\ntitular de la tarjeta: " + holder +
+                "\nnumero de tarjeta: " + cardNumber +
+                "\ncodigo de seguridad: " + cvv +
+                "\nfecha de vencimiento: " + expirationDate;
     }
 }

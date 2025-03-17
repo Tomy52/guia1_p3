@@ -3,16 +3,16 @@ package Model.Implementations;
 import Enums.InvoiceType;
 
 public abstract class Payment {
-    float amount;
     int transactionId;
     int transactionCounter = 0;
+    float amount;
     String dniNumber;
     InvoiceType invoiceType;
 
     public Payment(float amount, String dniNumber, InvoiceType invoiceType) {
-        this.amount = amount;
         transactionCounter++;
         transactionId = transactionCounter;
+        this.amount = amount;
         this.dniNumber = dniNumber;
         this.invoiceType = invoiceType;
     }
@@ -43,5 +43,14 @@ public abstract class Payment {
 
     public void setInvoiceType(InvoiceType invoiceType) {
         this.invoiceType = invoiceType;
+    }
+
+    @Override
+    public String toString() {
+        return "Pago id: " + transactionId +
+                "\ntipo de pago: " + getClass() +
+                "\nmonto: " + amount +
+                "\nnumero de dni: " + dniNumber +
+                "\ntipo de factura: " + invoiceType;
     }
 }
