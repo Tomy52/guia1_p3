@@ -1,9 +1,9 @@
 import Repositories.Implementations.PaymentsRepository;
-import Ui.Menu;
+import Ui.Implementations.PaymentsMenu;
 
 public class Main {
     public static void main(String[] args) {
-        Menu pagosMenu = new Menu(new PaymentsRepository());
+        PaymentsMenu pagosMenu = new PaymentsMenu(new PaymentsRepository());
 
         pagosMenu.mostrarMenu();
     }
