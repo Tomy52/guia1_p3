@@ -3,24 +3,24 @@ package Model.Implementations;
 import Enums.InvoiceType;
 
 public class ElectronicPayment extends Payment{
-    private String website;
+    private String sourceWebsite;
 
-    public ElectronicPayment(float amount, String dniNumber, InvoiceType invoiceType, String website) {
+    public ElectronicPayment(float amount, String dniNumber, InvoiceType invoiceType, String sourceWebsite) {
         super(amount, dniNumber, invoiceType);
-        this.website = website;
+        this.sourceWebsite = sourceWebsite;
     }
 
-    public String getWebsite() {
-        return website;
+    public String getSourceWebsite() {
+        return sourceWebsite;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setSourceWebsite(String sourceWebsite) {
+        this.sourceWebsite = sourceWebsite;
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                "\nsitio web de referencia: " + website;
+                "\nsitio web de referencia: " + sourceWebsite;
     }
 }

@@ -15,7 +15,7 @@ public class PaymentsMenu implements Menu<PaymentsRepository> {
         this.repository = repository;
     }
 
-    public void mostrarMenu() {
+    public void display() {
         int opcion;
 
         System.out.println("Bienvenido al sistema de gestion de pagos\n");

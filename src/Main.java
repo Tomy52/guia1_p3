@@ -3,8 +3,8 @@ import Ui.Implementations.PaymentsMenu;
 
 public class Main {
     public static void main(String[] args) {
-        PaymentsMenu pagosMenu = new PaymentsMenu(new PaymentsRepository());
+        PaymentsMenu paymentsMenu = new PaymentsMenu(new PaymentsRepository());
 
-        pagosMenu.mostrarMenu();
+        paymentsMenu.display();
     }
 }

@@ -4,14 +4,14 @@ import Enums.InvoiceType;
 
 public abstract class Payment {
     int transactionId;
-    int transactionCounter = 0;
+    int currentTransactionCount = 0;
     float amount;
     String dniNumber;
     InvoiceType invoiceType;
 
     public Payment(float amount, String dniNumber, InvoiceType invoiceType) {
-        transactionCounter++;
-        transactionId = transactionCounter;
+        currentTransactionCount++;
+        transactionId = currentTransactionCount;
         this.amount = amount;
         this.dniNumber = dniNumber;
         this.invoiceType = invoiceType;

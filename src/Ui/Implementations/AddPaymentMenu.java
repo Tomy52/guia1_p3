@@ -21,7 +21,7 @@ public class AddPaymentMenu {
 
         System.out.println("Ingrese el monto a pagar:");
         float amount = Float.parseFloat(teclado.nextLine());
-        if (!verifyAmount(amount)) throw new InvalidAmountException("El monto debe ser mayor a 0!");
+        if (!verifyPaymentAmount(amount)) throw new InvalidAmountException("El monto debe ser mayor a 0!");
 
         System.out.println("Ingrese el numero de dni:");
         String dni = teclado.nextLine();

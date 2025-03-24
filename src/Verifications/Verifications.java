@@ -3,7 +3,7 @@ package Verifications;
 import java.time.YearMonth;
 
 public class Verifications {
-    public static boolean verifyAmount(float amount) {
+    public static boolean verifyPaymentAmount(float amount) {
         return !(amount <= 0);
     }
 

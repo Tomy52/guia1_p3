@@ -2,7 +2,6 @@ package Model.Implementations;
 
 import Enums.InvoiceType;
 
-import java.time.LocalDate;
 import java.time.YearMonth;
 
 public class CreditCardPayment extends PhysicalPayment {
@@ -11,7 +10,8 @@ public class CreditCardPayment extends PhysicalPayment {
     private String holder;
     private YearMonth expirationDate;
 
-    public CreditCardPayment(float amount, String dniNumber, InvoiceType invoiceType, int shopId, String holder, String cardNumber, String cvv, YearMonth expirationDate) {
+    public CreditCardPayment(float amount, String dniNumber, InvoiceType invoiceType, int shopId,
+                             String holder, String cardNumber, String cvv, YearMonth expirationDate) {
         super(amount, dniNumber, invoiceType, shopId);
         this.cardNumber = cardNumber;
         this.cvv = cvv;
